@@ -1,0 +1,152 @@
+<asset_composite xmlns="http://namespaces.softwareag.com/acdl/1.0" targetNamespace="http://namespaces.softwareag.com/webMethods/IS" name="webM80" runtimeVersion="10.2.0.0">
+  <implementation.generic type="ispackage" />
+  <buildInfo name="build.version" value="1.0.25" />
+  <buildInfo name="BuildVersion" value="1.0.25" />
+  <buildInfo name="BuildTimestamp" value="2018-06-04T11:59:42" />
+  <buildInfo name="MinimumTargetRuntimeVersion" value="10.2.0.0" />
+  <property name="activatePkgOnInstall" displayName="Activate Package On Install">
+    <value>true</value>
+  </property>
+  <property name="archivePkgOnInstall" displayName="Archive Package On Install">
+    <value>true</value>
+  </property>
+  <property name="compilePackage" displayName="Compile Package On Install">
+    <value>true</value>
+  </property>
+  <property name="fragPackage" displayName="Fragment Package On Install">
+    <value>true</value>
+  </property>
+  <property name="clearACLs" displayName="Delete ACLs for the assets from the target Integration Server">
+    <value>false</value>
+  </property>
+  <property name="disallowActivePackageInstall" displayName="disallowActivePackageInstall">
+    <value>false</value>
+  </property>
+  <property name="packageExecutionCheck" displayName="packageExecutionCheck">
+    <value>0</value>
+  </property>
+  <property name="suspendTriggersDuringDeploy" displayName="Suspend Triggers During Deployment">
+    <value>false</value>
+  </property>
+  <property name="syncDocTypesToBroker" displayName="Synchronize Document Types To Broker During Deployment">
+    <value>true</value>
+  </property>
+  <asset name="ISPackage.webM80" displayName="webM80">
+    <implementation.generic type="ispackage" />
+  </asset>
+  <asset name="webM803.myInputDoc" displayName="webM803:myInputDoc">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="webM803.SampleFlowService" displayName="webM803:SampleFlowService">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM803.myPrintDoc" displayName="webM803:myPrintDoc">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:webM802.myInputDoc</dependsOn>
+  </asset>
+  <asset name="webM803.SampleJavaService" displayName="webM803:SampleJavaService">
+    <implementation.generic type="isjavaservice" />
+    <dependsOn>IS:webM80.code.source.webM803.java</dependsOn>
+    <dependsOn>IS:webM80.code.classes.webM803.class</dependsOn>
+  </asset>
+  <asset name="webM803.myPublishDoc" displayName="webM803:myPublishDoc">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM802.myJMSDoc" displayName="webM802:myJMSDoc">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="webM802.RunJMS" displayName="webM802:RunJMS">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:webM802.invokeJMSProcess</dependsOn>
+  </asset>
+  <asset name="webM802.myPublishDoc" displayName="webM802:myPublishDoc">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM802.test" displayName="webM802:test">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="webM802.mapDoc" displayName="webM802:mapDoc">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:webM802.myInputDoc</dependsOn>
+  </asset>
+  <asset name="webM802.myInputDoc" displayName="webM802:myInputDoc">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="webM802.myPrintDoc" displayName="webM802:myPrintDoc">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:webM802.myInputDoc</dependsOn>
+  </asset>
+  <asset name="webM802.runmyinputdoc" displayName="webM802:runmyinputdoc">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:webM802.myInputDoc</dependsOn>
+  </asset>
+  <asset name="webM802.invokeJMSProcess" displayName="webM802:invokeJMSProcess">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:webM802.myJMSDoc</dependsOn>
+  </asset>
+  <asset name="webM802.myPublishDoc_WSD" displayName="webM802:myPublishDoc_WSD">
+    <implementation.generic type="iswsdprovider" />
+    <dependsOn>IS:webM802.myPublishDoc</dependsOn>
+  </asset>
+  <asset name="webM801.SendMail" displayName="webM801:SendMail">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM801.receiveValidate" displayName="webM801:receiveValidate">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM801.subValidation" displayName="webM801:subValidation">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:webM801.Validation</dependsOn>
+  </asset>
+  <asset name="webM801.myPublishDoc" displayName="webM801:myPublishDoc">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM801.sendValidate" displayName="webM801:sendValidate">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM801.Validation" displayName="webM801:Validation">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="webM801.dummy" displayName="webM801:dummy">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM801.sendValidate_New" displayName="webM801:sendValidate_New">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM801.myPrintDoc" displayName="webM801:myPrintDoc">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="webM801.trigValidation" displayName="webM801:trigValidation">
+    <implementation.generic type="istrigger" />
+    <dependsOn>IS:webM801.subValidation</dependsOn>
+    <dependsOn>IS:webM801.Validation</dependsOn>
+  </asset>
+  <asset name="webM801.myJMSTrigger_New" displayName="webM801:myJMSTrigger_New">
+    <implementation.generic type="isjmstrigger" />
+    <dependsOn>IS:webM801.receiveValidate</dependsOn>
+    <dependsOn>IS:JMSAlias.PE_NONTRANSACTIONAL_ALIAS2</dependsOn>
+  </asset>
+  <asset name="webM801.myJMSTrigger" displayName="webM801:myJMSTrigger">
+    <implementation.generic type="isjmstrigger" />
+    <dependsOn>IS:webM801.receiveValidate</dependsOn>
+  </asset>
+  <asset name="webM80.code" displayName="code">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="webM80.code.classes" displayName="code/classes">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="webM80.code.classes.webM803.class" displayName="code/classes/webM803.class">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="webM80.code.source" displayName="code/source">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="webM80.code.source.webM803.java" displayName="code/source/webM803.java">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="webM80.pub" displayName="pub">
+    <implementation.generic type="isfolder" />
+  </asset>
+</asset_composite>
+
